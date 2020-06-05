@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color='warning'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-size: large;">My Trips</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid *ngFor="let trip of Trips[0]" > 
+  <ion-card  >
+    <ion-card-header style="background-color: #466F7C; color: white;font-size: medium;" >Trip ID {{trip.trip_id}}
+      <!-- <ion-datetime no-margin no-padding displayFormat="DD MMM YYYY " [(ngModel)]="myDate"></ion-datetime> -->
+   <br/><br/>   {{trip.start_time}} to {{trip.end_time}}</ion-card-header>
+    <img  style="width: 100%; height:250px;" (click)="getDetails(trip.trip_id)" class="main-img" src="/assets/map2.png" alt="">
+  </ion-card>
+
+</ion-grid>
+
+  
+  
+</ion-content>

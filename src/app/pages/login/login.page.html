@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color='warning'>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-size: large;" >INSU TRACKER</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div align="center" style="margin-top: 10%;">
+    <img style="width: 180px;height: 180px;" src="./assets/car.png" >
+  </div>
+  <div style="margin-top: 5%;"></div>       
+
+  <form [formGroup]="customerDetailsForm" (submit)="login()" >
+    <ion-item lines="none">
+      <!-- <ion-label position="stacked">Email</ion-label> -->
+      <ion-input type="text" formControlName="email" placeholder=" E-mail" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <!-- <ion-label position="stacked">Password</ion-label> -->
+      <ion-input type="password" formControlName="password" placeholder=" Password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Sign In</ion-button>
+        <!--<a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>-->
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-top: 30px">
+      <ion-col>
+        <a class="small-text">Don't you have accont?</a>
+        <ion-button [routerLink]="['/registration']" type="submit" color="primary" expand="block" style="color: white;">Register</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+</ion-content>

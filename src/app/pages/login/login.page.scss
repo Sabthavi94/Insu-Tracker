@@ -1,0 +1,22 @@
+.small-text {
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+ion-item {
+    --background: #2B464F;
+    color: white;
+}
+
+ion-input {
+    --background: white;
+    color: black;
+}
+
+ion-content{
+    --background: #2b464f !important;
+ }
+ 

@@ -1,0 +1,28 @@
+Insu Tracker
+------------
+
+#Account
+http://test.selvanimatrimony.com/insu/api/register	// Register user account
+http://test.selvanimatrimony.com/insu/api/login		//Login user account
+http://test.selvanimatrimony.com/insu/api/user		//View Register or Login User
+
+User Objects => 'name', 'email', 'password'
+
+
+#User Details
+http://test.selvanimatrimony.com/insu/api/user/details		//View login user information
+http://test.selvanimatrimony.com/insu/api/user/{id}/edit	//Get edit user information
+http://test.selvanimatrimony.com/insu/api/user/{id}/edit	//Post edit user information
+
+User Details Object => 'user_id', 'name', 'email', 'phone', 'address', 'policy_no', 'premium_amount', 'vehicle_type', 'veh_reg_no', 'image'
+
+
+#Driving Details
+http://test.selvanimatrimony.com/insu/api/driving/info			//View all info 
+http://test.selvanimatrimony.com/insu/api/driving/info/add		//Get add new info & view "trip_id"
+http://test.selvanimatrimony.com/insu/api/driving/info/add		//Post new info 
+http://test.selvanimatrimony.com/insu/api/driving/info/{id}/edit	//Get edit info 
+http://test.selvanimatrimony.com/insu/api/driving/info/{id}/edit	//Post edit info 
+http://test.selvanimatrimony.com/insu/api/driving/info/{id}/view	//View single info
+
+Driving Info Object => 'user_id', 'trip_id', 'date', 'location', 'latitude', 'longitude', 'speed', 'time'

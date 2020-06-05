@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color='warning'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-size: large;" >Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>  
+  <ion-row  style="margin-left: 10px;color: white">
+  <ion-col size="10" ><h4>Welcome <span *ngIf="this.gs.authResponse.user_data">{{this.gs.authResponse.user_data.name}} </span>
+    <span *ngIf="this.gs.authResponse.user">{{this.gs.authResponse.user.name}} </span>  ..!</h4></ion-col>
+  <ion-col size="2" ><img style="height: 30px;width: 30px; margin-top: 10px;" (click)="refreshData()" class="main-img" src="/assets/reload.png" alt=""></ion-col>
+  </ion-row>
+
+  <div class="ion-text-center">
+    <h4 style="color: white" class="ion-margin-top">Driving Score</h4>
+    <ion-row class="ion-margin-top">
+      <ion-col ion-item no-lines no-padding text-center>
+        <div class="numberCircle">{{this.Result.score}}</div>
+      </ion-col>  
+    </ion-row>
+    <ion-row class="ion-margin-top">
+      <ion-col size="2"></ion-col>
+      <ion-col size="8" style="border: 1px solid #218F76">
+        <div style="color: whitesmoke;">{{this.Result.discount}} Premium Discount</div>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+    <ion-grid>
+      <ion-row class="ion-margin-top">
+        <ion-col style="background-color: #466F7C;margin: 5px"><span style="color: white">Total Trips Today</span> 
+          <h3>{{this.Result.total_trip}}</h3>
+        </ion-col>
+        <ion-col style="background-color: #466F7C;margin: 5px"><span style="color: white">Time Travelled</span>
+          <h3>{{this.Result.travel_time}}</h3></ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row class="ion-margin-top">
+      <ion-col style="background-color: #466F7C;margin: 5px"><span style="color: white">Average Today</span> <h3>{{this.Result.average_speed}}</h3></ion-col>
+        <ion-col style="background-color: #466F7C;margin: 5px"><span style="color: white">Over Speedings</span><h3>{{this.Result.over_speed}}</h3></ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color='warning'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-size: large;" >Input Driving Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  
+    <ion-item lines="none">
+      <ion-label position="fixed">Trip ID</ion-label>
+      <ion-item>{{TripId}}</ion-item>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="fixed">Date</ion-label>
+      <!-- <ion-input input type="date" placeHolder="Enter Date"></ion-input> -->
+      <ion-datetime displayFormat="DD MMM YYYY " [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+
+ 
+      <div style="background-color:  #2b464f !important" id='space'></div>
+     
+
+
+      <form [formGroup]="DrivingDataForm" (submit)="submitData()" >
+    
+     <ion-grid>
+      <ion-row>
+        <ion-col style="background-color: #466F7C;margin: 1px;color: white;" >
+          <ion-input required type="text" formControlName="location" placeHolder="Location Name"></ion-input>
+        </ion-col>
+         </ion-row>
+          <ion-row>
+            <ion-col style="background-color: #466F7C;margin: 1px;color: white;" >
+              <ion-input required type="text" formControlName="latitude" placeHolder="Latitude"></ion-input>
+            </ion-col>
+            <ion-col style="background-color: #466F7C;margin: 1px;color: white;">
+              <ion-input required type="text" formControlName="longitude" placeHolder="Longitude"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col  style="background-color: #466F7C;margin: 1px;color: white;" >
+              <ion-input required type="text" formControlName="speed" placeHolder="Speed"></ion-input>
+            </ion-col>
+            <ion-col style="background-color: #466F7C;margin: 1px;color: white;" >
+              <ion-input required type="text" formControlName="time" placeHolder="Time(hh:mm:ss)"></ion-input>
+            </ion-col>
+          </ion-row>
+
+          <ion-grid no-lines no-padding style="background-color: #2b464f">
+            <ion-row>
+             <ion-col>
+                <ion-button  (click)="addData()" expand="block" >ADD</ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button  type="submit" expand="block" >SUBMIT</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          
+        </ion-grid>
+       
+    </form>
+
+    <!-- <ion-grid *ngIf="trip"> -->
+     
+      <ion-grid *ngFor="let trip of TripDataSet" style="margin-top: 10px;color: white;"> 
+       <!-- <ion-grid no-margin no-padding *ngIf="trip.trip_id>=TripId"> -->
+        <ion-row>
+          <ion-col  style="background-color: #466F7C;margin: 1px;color: white;padding: 10px;">Location: {{trip.location}}</ion-col></ion-row>
+        <ion-row>
+          <ion-col  style="background-color: #466F7C;margin: 1px;color: white;padding: 10px;">Lat: {{trip.latitude}}</ion-col>
+          <ion-col  style="background-color: #466F7C;margin: 1px;color: white;padding: 10px;">Long: {{trip.longitude}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col  style="background-color: #466F7C;margin: 1px;color: white;padding: 10px;">Speed: {{trip.speed}}</ion-col>
+          <ion-col  style="background-color: #466F7C;margin: 1px;color: white;padding: 10px;">Time: {{trip.time}}</ion-col> 
+        </ion-row>
+       <!-- </ion-grid> -->
+        
+        
+      </ion-grid>
+    <!-- </ion-grid>  -->
+   
+     
+      
+      
+  
+    
+    
+  
+</ion-content>

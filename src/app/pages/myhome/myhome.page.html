@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color='warning'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-size: large;">Connect Device</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+
+        <h3 style="color: white">Welcome <span *ngIf="this.gs.authResponse.user_data">{{this.gs.authResponse.user_data.name}} </span>
+          <span *ngIf="this.gs.authResponse.user">{{this.gs.authResponse.user.name}} </span> !</h3>
+
+       
+        <h5 style="color: white" class="ion-margin-top">Connect your Insu Tracker device</h5>
+    
+        <div align="center" style="margin-top: 30px" ><img src="./assets/usb.png" width='90'></div>
+        
+        <h5 style="color: white" class="ion-margin-top">No Insu Tracker device detected</h5>
+        <h5  style="margin-top: 50px; color: white;">Make sure your device is ON <br> and then tap on the connect below</h5>
+
+        <div class="ion-text-center" style="margin-top: 20px">
+          <ion-button (click)="connect()" color="primary">Connect</ion-button>
+        </div>
+
+
+
+</ion-content>

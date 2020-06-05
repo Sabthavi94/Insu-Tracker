@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color='warning'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-size: large;">Trip Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div id="map_canvas">
+  </div>
+
+  <ion-grid id="trip_details">
+    <ion-row >
+      <ion-col style="background-color: #466F7C;margin: 1px"><span style="color: white">Driving Score: {{Trip.score}}</span> </ion-col>
+      <ion-col style="background-color: #466F7C;margin: 1px"><span style="color: white">Time Taken: {{Trip.travel_time}}</span></ion-col>
+    </ion-row>
+    <ion-row >
+      
+      <ion-col style="background-color: #466F7C;margin: 1px"><span style="color: white">AverageSpeed: {{Trip.average_speed}}</span></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
+
+</ion-content>

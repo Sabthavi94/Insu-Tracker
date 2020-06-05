@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color='warning'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-size: large;">Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+
+  
+    <ion-grid style="margin-left: 5px;margin-right: 5px;margin-top: 10px;">
+      <ion-row>
+        <ion-col>Name:</ion-col>
+        <ion-col style="color:#758AA2;">{{this.gs.userResponse.name}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Mobile No:</ion-col>
+        <ion-col style="color:#758AA2;">{{UserDetails.phone}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Address:</ion-col>
+        <ion-col style="color:#758AA2;">{{UserDetails.address}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Policy No:</ion-col>
+        <ion-col style="color:#758AA2;">{{UserDetails.policy_no}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Premium Amount:</ion-col>
+        <ion-col style="color:#758AA2;">{{UserDetails.premium_amount}}</ion-col>
+      </ion-row>
+
+      <ion-card-header>Vehicle Details</ion-card-header>
+      <ion-row style="margin-top: 15px;">
+        <ion-col>Vehicle Type:</ion-col>
+        <ion-col style="color:#758AA2;">{{UserDetails.vehicle_type}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Registration No:</ion-col>
+        <ion-col style="color:#758AA2;">{{UserDetails.veh_reg_no}}</ion-col>
+      </ion-row>
+
+      <ion-card-header>Driving Score Details</ion-card-header>
+        <ion-row style="margin-top: 15px;">
+          <ion-col>Today Score:</ion-col>
+          <ion-col style="color:#758AA2;">64</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Monthly Average Score:</ion-col>
+          <ion-col style="color:#758AA2;">76</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Eligible Discount:</ion-col>
+          <ion-col style="color:#758AA2;">25%</ion-col>
+        </ion-row>
+
+
+    </ion-grid>
+
+
+</ion-content>

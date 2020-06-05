@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color='warning'>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-size: large;" >INSU TRACKER</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <div align="center" style="margin-top: 10%;">
+    <img style="width: 150px;height: 150px;" src="./assets/car.png" >
+  </div>
+  <h4 style="text-align: center; color: white;">Register with Insu Tracker</h4>
+  <div style="margin-top: 5%;"></div>  
+
+  <form [formGroup]="customerDetailsForm" >
+    <ion-item lines="none">
+      <!-- <ion-label position="stacked">Motor Insurance Policy No</ion-label> -->
+      <ion-input type="text" formControlName="policy" required placeholder=" Motor Insurance Policy No"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <!-- <ion-label position="stacked">User Name</ion-label> -->
+      <ion-input type="text" formControlName="name" required placeholder=" User Name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <!-- <ion-label position="stacked">Email</ion-label> -->
+      <ion-input type="text" formControlName="email" required placeholder=" Email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <!-- <ion-label position="stacked">Password</ion-label> -->
+      <ion-input type="password" formControlName="password" required placeholder=" Password"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <!-- <ion-label position="stacked">Confirm Password</ion-label> -->
+      <ion-input type="password" formControlName="password_confirmation" required placeholder=" Confirm Password"></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" (click)="signUp()" expand="block" >Sign Up</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

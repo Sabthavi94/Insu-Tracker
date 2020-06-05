@@ -1,0 +1,138 @@
+<ion-app >
+
+  <!--<ion-split-pane>
+    <ion-menu side="end">   &lt;!&ndash;[disabled]="!this.gVariable.authentication.authorized"&ndash;&gt;
+      <ion-header>
+        <ion-toolbar color="header">
+          <ion-buttons slot="start">
+            <ion-button color="white" (click)="home()">
+              <ion-icon slot="icon-only" name="home"></ion-icon>
+            </ion-button>
+            &lt;!&ndash;<ion-img src="/assets/images/header-icon.png" style="width: 70px"></ion-img>&ndash;&gt;
+            <ion-button color="white" (click)="messages()">
+              <ion-icon slot="icon-only" name="mail"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-title color="white" class="ion-text-center"><ion-text class="page-title">MENU</ion-text></ion-title>
+          <ion-buttons slot="end">
+
+            <ion-menu-button color="light"></ion-menu-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>color='light'
+
+      <ion-content style="&#45;&#45;background: #E4E4E4">
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-list class="side-menu" style="background-color: #E4E4E4">
+
+            <ion-item lines="none" routerLink="/profile" class="side-menu-item">
+              <ion-thumbnail slot="start" class="img-margin">
+                <ion-img class="menu-icon" src="/assets/images/dashboard/male.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>Profile</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" routerLink="/meet" class="side-menu-item">
+              <ion-thumbnail slot="start" class="img-margin">
+                <ion-img class="menu-icon" src="/assets/images/dashboard/female.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>Meet Her</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" routerLink="/compatibility" class="side-menu-item">
+              <ion-thumbnail slot="start" class="img-margin">
+                <ion-img class="menu-icon" src="/assets/images/dashboard/compatibility.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>Compatibility Matches</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="side-menu-item" routerLink="/personality">
+              <ion-thumbnail slot="start" class="img-margin">
+                <ion-img class="menu-icon" src="/assets/images/dashboard/personality.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>Personality Matches</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="side-menu-item" [routerLink]="['/members/', 'seeking_members']">
+              <ion-thumbnail slot="start" class="img-margin">
+                <ion-img class="menu-icon" src="/assets/images/dashboard/seeking-her.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>Seeking Members</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="side-menu-item" [routerLink]="['/members/', 'who_viewed_me']">
+              <ion-thumbnail slot="start" class="img-margin">
+                <ion-img class="menu-icon" src="/assets/images/dashboard/view.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>Who viewed me</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="side-menu-item" [routerLink]="['/members/', 'online_members']">
+              <ion-thumbnail slot="start" class="img-margin">
+                <ion-img class="menu-icon" src="/assets/images/dashboard/online.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>Who is online</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="side-menu-item" [routerLink]="['/members/', 'all_members']">
+              <ion-thumbnail slot="start" class="img-margin">
+                <ion-img class="menu-icon" src="/assets/images/dashboard/all.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>All Members</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="side-menu-item" (click)="ReportProblems()">  &lt;!&ndash;presentAlertPrompt&ndash;&gt;
+              <ion-thumbnail slot="start" class="img-margin">
+                <ion-img class="menu-icon" src="/assets/images/dashboard/report-a-problem.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>Report Problems</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="side-menu-item" (click)="cancelMembership()">
+              <ion-thumbnail slot="start" class="img-margin">
+                <ion-img class="menu-icon" src="/assets/images/dashboard/cancel-membership.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>Cancel Membership</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="side-menu-item" routerLink="/membership-status">
+              <ion-thumbnail slot="start" class="img-margin">
+                <ion-img class="menu-icon" src="/assets/images/dashboard/membership-status.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>Membership Status</ion-label>
+            </ion-item>
+
+          </ion-list>
+
+          <div class="ion-text-center"><ion-button (click)="onClickLogOut()" class="logout" color="themered">Logout</ion-button></div>
+        </ion-menu-toggle>
+
+      </ion-content>
+    </ion-menu>
+    &lt;!&ndash;<ion-router-outlet main></ion-router-outlet>&ndash;&gt;
+    <ion-router-outlet></ion-router-outlet>
+  </ion-split-pane>-->
+
+
+  <ion-split-pane color='light' contentId="main-content">
+    <ion-menu  color='light' contentId="main-content" type="overlay">
+      <ion-content color='light' >
+        <!-- <ion-list color='light' id="inbox-list"> -->
+          <img color='light' style="width:50%;height: 100px; margin-left: 25%" src="./assets/car.png" >
+          <!--<ion-note>hi@ionicframework.com</ion-note>-->
+
+          <ion-menu-toggle  color='light' auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item color='light' (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        <!-- </ion-list> -->
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+
+</ion-app>
